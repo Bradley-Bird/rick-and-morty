@@ -1,6 +1,7 @@
 import React from 'react';
 import { useEffect } from 'react';
 import { useState } from 'react';
+import CharacterCard from '../components/CharacterCard';
 import { fetchCharacters } from '../services/rickandmorty';
 
 function Main() {
@@ -20,11 +21,7 @@ function Main() {
       {loading ? (
         <p>Loading...</p>
       ) : (
-        character.map((c) => (
-          <div key={c.id}>
-            <h2>{c.name}</h2>
-          </div>
-        ))
+        character.map((c) => <CharacterCard key={c.id} {...c} />)
       )}
     </>
   );
