@@ -1,10 +1,10 @@
 import React from 'react';
 import CharacterDetailCard from '../components/CharacterDetailCard';
 
-function CharacterDetail() {
+function CharacterDetail({ character }) {
   return (
     <>
-      <CharacterDetailCard />
+      <CharacterDetailCard character={character} />
     </>
   );
 }

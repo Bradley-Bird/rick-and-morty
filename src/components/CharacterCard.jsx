@@ -1,10 +1,10 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-function CharacterCard({ id, name }) {
+function CharacterCard({ id, name, url }) {
   return (
     <div key={id}>
-      <Link to={`/character/${id}`}>{name}</Link>
+      <Link to={`${url}/${id}`}>{name}</Link>
     </div>
   );
 }
