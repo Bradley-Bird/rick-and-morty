@@ -1,12 +1,10 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-function CharacterCard({ id, name, url, setId }) {
+function CharacterCard({ id, name, url }) {
   return (
     <div key={id}>
-      <Link onClick={() => setId(id)} to={`${url}/${id}`}>
-        {name}
-      </Link>
+      <Link to={`${url}/${id}`}>{name}</Link>
     </div>
   );
 }

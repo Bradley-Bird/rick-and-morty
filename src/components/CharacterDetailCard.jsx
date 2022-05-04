@@ -3,21 +3,17 @@ import { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import { fetchCharactersById } from '../services/rickandmorty';
 
-function CharacterDetailCard({ character, id }) {
-  // const { id } = useParams();
-  // const [characters, setCharacters] = useState({});
+function CharacterDetailCard() {
+  const { id } = useParams();
+  const [character, setCharacter] = useState({});
 
-  // useEffect(() => {
-  //   // const selectedCharacter = character.find(
-  //   //   (character) => character.id === Number(id)
-  //   // );
-  //   const fetchData = async () => {
-  //     const resp = await fetchCharactersById(id);
-  //     setCharacters(resp);
-  //   };
-  //   fetchData();
-  //   // setCharacters(selectedCharacter);
-  // }, [id]);
+  useEffect(() => {
+    const fetchData = async () => {
+      const resp = await fetchCharactersById(id);
+      setCharacter(resp);
+    };
+    fetchData();
+  }, [id]);
 
   return (
     <>
