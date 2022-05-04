@@ -1,3 +1,15 @@
+import { Redirect, Route, Switch } from 'react-router-dom';
+import Main from './views/Main';
+
 export default function App() {
-  return <h1>Hello World</h1>;
+  return (
+    <>
+      <Switch>
+        <Route path="/character" component={Main} />
+        <Route path="/">
+          <Redirect to="/character" />
+        </Route>
+      </Switch>
+    </>
+  );
 }
